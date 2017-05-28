@@ -1,0 +1,116 @@
+﻿<div ng-show="error" class="alert alert-danger">{{error}}</div>
+<div class="row">
+    <div class="col-md-2 col-sm-1"></div>
+    <div class="col-md-8 col-sm-10">
+        <form name="country-form" ng-submit="CountryCities()" role="form">
+            <div class="form-group">
+                <label for="username">Country</label>
+                <i class="fa fa-globe"></i>
+                <input type="text" name="country" id="country" class="form-control" ng-model="country" required />
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Cities</button>
+            </div>
+        </form>
+	<div class="row"><div class="col-md-12 col-sm-12" style="height:20px;"></div></div>
+        <form name="city-form" ng-submit="CityWeather()" role="form">
+            <div class="form-group">
+                <label for="username">City</label>
+                <i class="fa fa-institution"></i>
+		<select name="city" class="form-control" ng-model="city" ng-options="city for city in cities" required >
+			<option></option>
+		</select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Weather</button>
+            </div>
+        </form>
+	<div class="row"><div class="col-md-12 col-sm-12" style="height:20px;"></div></div>
+        <div class="row" ng-show="weather.location">
+		<div class="col-md-12 col-sm-12">
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Location</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.location}}
+		            </div>
+		        </div>
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Time</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.time | date:'HH:mm:ss yyyy-MM-dd'}}
+		            </div>
+		        </div>
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Wind</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.wind}}
+		            </div>
+		        </div>
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Visibility</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.visibility}}
+		            </div>
+		        </div>        
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Sky Conditions</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.skyConditions}}
+		            </div>
+		        </div>        
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Temperature</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.temperature}}
+		            </div>
+		        </div>           
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Dew Point</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.dewPoint}}
+		            </div>
+		        </div>        
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Relative Humidity</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.relativeHumidity}}
+		            </div>
+		        </div>            
+        		<div class="row">
+		            <div class="col-md-4 col-sm-4 control-label">
+                		<strong>Pressure</strong>
+		            </div>
+		            <div class="col-md-1 col-sm-1"></div>
+		            <div class="col-md-7 col-sm-7 control-label">
+            			{{weather.pressure}}
+		            </div>
+		        </div>                   
+		</div>
+        </div>
+    </div>
+    <div class="col-md-2 col-sm-1"></div>
+</div>
