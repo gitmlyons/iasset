@@ -26,7 +26,8 @@ namespace WeatherService.Controllers
         {
             try
             {
-                var response = await _providerService.CountryCities(country);
+                //var response = await _providerService.CountryCities(country);
+                var response = new List<string> { "Sydney", "Melbourne", "Hobart", "Brisbane", "Canberra", "Perth", "Adelaide" };
                 return new MethodResult<List<string>>() { Succeeded = true, Result = response };
             }
             catch (Exception ex)
